@@ -1,5 +1,6 @@
 
 import boto.ec2 
+import WH
 
 
 if __name__ == '__main__':

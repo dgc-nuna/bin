@@ -50,3 +50,18 @@ class WH:
         print r.text
         return r
 
+    def get_entry_points(self,site_id):
+        r = self.session.get(
+            "%s/site/%d/entry_points" % (api_root,site_id),
+            headers={"Accept":"application/json"}
+            )
+        return json.loads(r.text)
+
+    def get_allowed_hosts(self,site_id):
+        r = self.session.get(
+            "%s/site/%d/allowed_hosts" % (api_root,site_id),
+            headers={"Accept":"application/json"}
+            )
+        return json.loads(r.text)
+
+
