@@ -64,4 +64,10 @@ class WH:
             )
         return json.loads(r.text)
 
+    def delete(self,href):
+        r = self.session.delete(
+            "%s/%s" % (api_root,href),
+            headers={"Accept":"application/json"}
+            )
+        return r
 
